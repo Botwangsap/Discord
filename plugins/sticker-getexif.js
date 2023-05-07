@@ -13,5 +13,6 @@ handler.help = ['getexif']
 handler.tags = ['sticker']
 
 handler.command = ['getexif']
+handler.limit = true
 
 export default handler
