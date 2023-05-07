@@ -6,7 +6,8 @@ let handler = async (m, { conn, text }) => {
   handler.command = /^(asupanloli)$/i
   handler.tags = ['premium']
   handler.help = ['asupanloli']
-  handler.premium = true
+  handler.premium = false
+  handler.limit = true
   export default handler
   
  global.asupan = [
