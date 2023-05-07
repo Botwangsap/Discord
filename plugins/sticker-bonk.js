@@ -12,5 +12,6 @@ let handler = async (m, { conn, text }) => {
 	conn.sendMessage(m.chat, { image: bonk }, { quoted: m })
 }
 handler.command = /^(bonk)$/i
+handler.limit = true
 
 export default handler
