@@ -60,7 +60,7 @@ global.nomorwa = '0'
 
 global.readMore = readMore
 global.author = 'bot WhatsApp By Anggaakz'
-global.namebot = '​ Lisabotz-MD'
+global.namebot = '​ Lisabotz-MD🥰😍'
 global.wm = '© Lisabotz-MD By AnggaKz'
 global.media = 'https://telegra.ph/file/3f319df869776eebcdfb3.jpg'
 global.wm = 'AnggaKz '
@@ -68,9 +68,9 @@ global.watermark = wm
 global.wm2 = 'AnggaKz '
 global.botdate = `⫹⫺ DATE: ${week} ${date}\n⫹⫺ 𝗧𝗶𝗺𝗲: ${wktuwib}`
 global.bottime = `T I M E : ${wktuwib}`
-global.titlebot = `Lisabotz-MD`
-global.stickpack = 'Lisabotz-MD'
-global.stickauth = `© bot WhatsApp AnggaKz`
+global.titlebot = `Lisabotz-MD🥰😍`
+global.stickpack = 'Lisabotz-MD🥰😍'
+global.stickauth = `© bot WhatsApp By AnggaKz✅😍🥰`
 global.week = `${week} ${date}`
 global.wibb = `${wktuwib}`
 //⫹⫺ ╳╶╼╶╶╶╶┈ ⎝ OWNER INFO ⎞ ┈╴╴╴╴╾╴╳ ⫹⫺
@@ -91,7 +91,7 @@ global.snh = 'https://www.instagram.com/anggatzi123'
 //⫹⫺ ╳╶╼╶╶╶╶┈ ⎝ DONASI ⎞ ┈╴╴╴╴╾╴╳ ⫹⫺
 global.pdana = '0819 9842 5782'
 global.povo = '-'
-global.pgopay = '-'
+global.pgopay = '081998425782'
 global.plinkaja = '-' //link aja
 global.ppulsa = '0819 9842 5782'
 global.ppulsa2 = '0859 2346 3470'
