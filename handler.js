@@ -30,7 +30,7 @@ export async function handler(chatUpdate) {
     this.pushMessage(chatUpdate.messages).catch(console.error)
     let m = chatUpdate.messages[chatUpdate.messages.length - 1]
     
-    global.img = 'https://telegra.ph/file/e4a2f4339da8a32ad20a1.jpg' 
+    global.img = 'https://telegra.ph/file/d26fc806a66cd6b70bcdc.jpg' 
     
     if (!m)
         return
@@ -747,12 +747,12 @@ export async function participantsUpdate({ id, participants, action }) {
 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&text=',
 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&fillColor1Color=%23f2aa4c&fillColor2Color=%23f2aa4c&fillColor3Color=%23f2aa4c&fillColor4Color=%23f2aa4c&fillColor5Color=%23f2aa4c&fillColor6Color=%23f2aa4c&fillColor7Color=%23f2aa4c&fillColor8Color=%23f2aa4c&fillColor9Color=%23f2aa4c&fillColor10Color=%23f2aa4c&fillOutlineColor=%23f2aa4c&fillOutline2Color=%23f2aa4c&backgroundColor=%23101820&text=']
 conn.sendButtonImg(id, `${pickRandom(flaaa2)}` + `Congratulation ` + '@user', 'Sᴇʟᴀᴍᴀᴛ Nᴀɪᴋ Jᴀʙᴀᴛᴀɴ', text, mentions: this.parseMention(text), { contextInfo: { externalAdReply: { showAdAttribution: true,
-    mediaUrl: 'https://facebook.com/sadtime098',
+    mediaUrl: 'https://instagram.com/anggatzi123',
     mediaType: 2, 
     description: sgc,
     title: "Jᴀɴɢᴀɴ Lᴜᴘᴀ Mᴀɴᴅɪ!!",
     body: wm,
-    thumbnail: fs.readFileSync('./thumbnail.jpg'),
+    thumbnail: fs.readFileSync('./1684450933508.jpg'),
     sourceUrl: sgc
      }}
   })*/
@@ -818,7 +818,7 @@ const fgclink = {
                    "inviteCode": "null",
                    "groupName": "Halo", 
                    "caption": wm, 
-                   'jpegThumbnail': fs.readFileSync('./media/7732bfe51150b0ad497e6e7460c36c56.jpg')
+                   'jpegThumbnail': fs.readFileSync('./media/1684450933508.jpg')
                }
            }
        }
@@ -830,7 +830,7 @@ const fgclink = {
     description: sgc,
     title: "Lisabotz-MD🥰",
     body: wm,
-    thumbnail: fs.readFileSync('./7732bfe51150b0ad497e6e7460c36c56.jpg'),
+    thumbnail: fs.readFileSync('./1684450933508.jpg'),
     sourceUrl: sgc
      }}
   })
@@ -842,7 +842,7 @@ owner: '*ᴏɴʟʏ ᴏᴡɴᴇʀ* • ᴄᴏᴍᴍᴀɴᴅ ɪɴɪ ʜᴀɴʏᴀ �
     description: sgc,
     title: "Lisabotz-MD🥰",
     body: wm,
-    thumbnail: fs.readFileSync('./7732bfe51150b0ad497e6e7460c36c56.jpg'),
+    thumbnail: fs.readFileSync('./1684450933508.jpg'),
     sourceUrl: sgc
      }}
   })
@@ -853,7 +853,7 @@ mods: '*ᴏɴʟʏ ᴍᴏᴅᴇʀᴀᴛᴏʀ* • ᴄᴏᴍᴍᴀɴᴅ ɪɴɪ ʜ�
     description: sgc,
     title: "Lisabotz-MD🥰",
     body: wm,
-    thumbnail: fs.readFileSync('./7732bfe51150b0ad497e6e7460c36c56.jpg'),
+    thumbnail: fs.readFileSync('./1684450933508.jpg'),
     sourceUrl: sgc
      }}
   })
@@ -863,7 +863,7 @@ let prm = {
     description: sgc,
     title: "Lisabotz-MD🥰",
     body: wm,
-    thumbnail: fs.readFileSync('./7732bfe51150b0ad497e6e7460c36c56.jpg'),
+    thumbnail: fs.readFileSync('./1684450933508.jpg'),
     sourceUrl: sgc
      }}
   })
@@ -875,7 +875,7 @@ let gc = {
     description: sgc,
     title: "Lisabotz-MD🥰",
     body: wm,
-    thumbnail: fs.readFileSync('./7732bfe51150b0ad497e6e7460c36c56.jpg'),
+    thumbnail: fs.readFileSync('./1684450933508.jpg'),
     sourceUrl: sgc
      }}
   })
@@ -890,7 +890,7 @@ let msg = {
     description: sgc,
     title: "Lisabotz-MD🥰",
     body: wm,
-    thumbnail: fs.readFileSync('./7732bfe51150b0ad497e6e7460c36c56.jpg'),
+    thumbnail: fs.readFileSync('./1684450933508.jpg'),
     sourceUrl: sgc
      }}
   })
@@ -903,7 +903,7 @@ if (msgg) return conn.sendButtonDocAccess(m.chat, `${ucapan()} ` + tag, msgg + '
     description: sgc,
     title: "Lisabotz-MD🥰",
     body: wm,
-    thumbnail: fs.readFileSync('./7732bfe51150b0ad497e6e7460c36c56.jpg'),
+    thumbnail: fs.readFileSync('./1684450933508.jpg'),
     sourceUrl: sgc
      }}
   })
