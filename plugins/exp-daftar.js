@@ -30,7 +30,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : m.fromMe ? conn.user.jid : m.sender
 
-  let thumb = 'https://telegra.ph/file/b5cc36920ff446bd25de7.jpg'
+  let thumb = 'https://telegra.ph/file/d26fc806a66cd6b70bcdc.jpg'
 
   m.reply(`
 
