@@ -408,15 +408,47 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       global.opts['swonly'] = isEnable
       break
     default:
-      if (!/[01]/.test(command)) return await conn.sendMessage(m.chat, listMessage)
+      if (!/[01]/.test(command)) return m.reply(`
+List option:
+❗welcome
+❗delete
+❗public
+❗antivirtex
+❗antilink
+❗antilinkbitly
+❗antiLinkTik
+❗antiLinkYt
+❗antiLinkTel
+❗antiLinkFb
+❗antiLinkIg
+❗antiLinkWa
+❗antiLinkHttp
+❗nsfw
+❗antiviewonce
+❗antidelete
+❗antitoxic
+❗antisticker
+❗autosticker
+❗antibadword
+❗autolevelup
+❗detect
+❗document
+❗whitelistmycontacts
+❗restrict
+❗nyimak
+❗autoread
+❗pconly
+❗gconly
+❗swonly
+Contoh:
+${usedPrefix}enable welcome
+${usedPrefix}disable welcome
+`.trim())
       throw false
   }
-  conn.sendButton(m.chat, `*${htki} OPTIONS ${htka}*
-🗂️ *Type:* ${type} 
-📊 *Status:* Success ✅
-🎚️ *Options:* ${isEnable ? 'Enable' : 'Disable'}
-📣 *For:* ${isAll ? 'This Bot' : isUser ? '' : 'This Chats'}
-`,wm, null, [[`${isEnable ? '✖️ Disable' : '✔️ Enable'}`, `${isEnable ? `.off ${type}` : `.on ${type}`}`], ['🎀 Menu', '.menu']],m)
+  m.reply(`
+*${type}* berhasil di *${isEnable ? 'nyala' : 'mati'}kan* ${isAll ? 'untuk bot ini' : isUser ? '' : 'untuk chat ini'}
+`.trim())
 }
 handler.help = ['en', 'dis'].map(v => v + 'able <option>')
 handler.tags = ['group', 'owner']
