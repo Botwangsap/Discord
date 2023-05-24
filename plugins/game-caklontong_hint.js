@@ -4,11 +4,9 @@ let handler = async (m, { conn }) => {
     if (!(id in conn.caklontong)) throw false
     let json = conn.caklontong[id][1]
     let ans = json.jawaban
-    let clue = ans.replace(/[AIUEO]/gi, '_')
+    let clue = ans.replace(/[bcdfghjklmnpqrstvwxyz]/g, '_')
     m.reply('```' + clue + '```')
 }
 handler.command = /^calo$/i
-
 handler.limit = true
-
-export default handler
+module.exports = handler
