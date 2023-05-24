@@ -117,7 +117,7 @@ let handler = async (m, { conn }) => {
 ▸ *ᴇxᴘɪʀᴇᴅ:*
 ${clockString(user.premiumTime - new Date() * 1)}`: ''}
 `.trim()
-  conn.sendButton(m.chat, `${htki} ᴜ s ᴇ ʀ s ${htka}`, caption, null, [`ɪɴᴠᴇɴᴛᴏʀʏ`, '.inv'],m)
+  await conn.reply(m.chat, caption, m),
 }
 handler.help = ['my']
 handler.tags = ['xp']
