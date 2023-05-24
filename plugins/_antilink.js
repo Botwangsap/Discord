@@ -14,7 +14,7 @@ export async function before(m, { isAdmin, isBotAdmin }) {
             const linkThisGroup = `https://chat.whatsapp.com/${await this.groupInviteCode(m.chat)}`
             if (m.text.includes(linkThisGroup)) return !0
         }
-        await conn.sendButton(m.chat, `*Group link detect!*${isBotAdmin ? '' : '\n\n_Bot not admin_  t_t'}`, author, ['off antilink', '/disable antilink'], m)
+        await m.reply(`*「 ANTI LINK 」*\n\nDetected *${await conn.getName(m.sender)}* Kamu mengirim linkgrup🤬!\n\nmaaf akan saya kick karena anda telah melanggar peraturan Group ini!`)
         if (isBotAdmin && bot.restrict) {
            await conn.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: pesan, participant: hapus }})
             conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
