@@ -1,7 +1,8 @@
+let fetch = require('node-fetch')
 
-import fetch from 'node-fetch'
-let timeout = 120000
-let poin = 2500
+let timeout = 180000
+let poin = 500
+let tiketcoin = 1
 let handler = async (m, { conn, usedPrefix }) => {
     conn.asahotak = conn.asahotak ? conn.asahotak : {}
     let id = m.chat
@@ -9,19 +10,21 @@ let handler = async (m, { conn, usedPrefix }) => {
         conn.reply(m.chat, 'Masih ada soal belum terjawab di chat ini', conn.asahotak[id][0])
         throw false
     }
-    let src = await (await fetch('https://raw.githubusercontent.com/BochilTeam/database/master/games/asahotak.json')).json()
+let src = await (await fetch('https://raw.githubusercontent.com/BochilTeam/database/master/games/asahotak.json')).json()
     let json = src[Math.floor(Math.random() * src.length)]
     let caption = `
 ${json.soal}
+
 Timeout *${(timeout / 1000).toFixed(2)} detik*
 Ketik ${usedPrefix}ao untuk bantuan
 Bonus: ${poin} XP
-    `.trim()
+Tiketcoin: ${tiketcoin} TiketCoin
+`.trim()
     conn.asahotak[id] = [
-        await conn.sendBut(m.chat, caption, wm, 'Bantuan', '.ao', m),
+        await conn.reply(m.chat, caption, m),
         json, poin,
-        setTimeout(async () => {
-            if (conn.asahotak[id]) await conn.sendBut(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, wm, 'Asah Otak', '.asahotak', conn.asahotak[id][0])
+        setTimeout(() => {
+            if (conn.asahotak[id]) conn.reply(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, conn.asahotak[id][0])
             delete conn.asahotak[id]
         }, timeout)
     ]
@@ -29,5 +32,7 @@ Bonus: ${poin} XP
 handler.help = ['asahotak']
 handler.tags = ['game']
 handler.command = /^asahotak/i
+handler.limit = false
+handler.group = true
 
-export default handler
+module.exports = handler
