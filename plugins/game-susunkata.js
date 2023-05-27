@@ -23,7 +23,7 @@ Ketik ${usedPrefix}suka untuk bantuan
 Bonus: ${poin} XP
 `.trim()
     conn.susunkata[id] = [
-        await conn.reply(m.chat, caption, 'Bantuan', '.suka'),
+        await conn.reply(m.chat, caption, m),
         json, poin,
         setTimeout(async () => {
             if (conn.susunkata[id]) await conn.sendBut(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, wm, 'Susun Kata', '.susunkata')
