@@ -11,7 +11,7 @@ handler.before = async function (m) {
         if (['.suka', 'Bantuan', ''].includes(m.text)) return !0
         if (m.text.toLowerCase() == json.jawaban.toLowerCase().trim()) {
             global.db.data.users[m.sender].exp += this.susunkata[id][2]
-            await this.sendBut(m.chat, `*Benar!* +${this.susunkata[id][2]} XP`, wm, 'Susun Kata', '.susunkata')
+            m.reply(`*Benar!*\n+${this.susunkata[id][2]} XP\n+1 Tiketcoin`)
             clearTimeout(this.susunkata[id][3])
             delete this.susunkata[id]
         } else if (similarity(m.text.toLowerCase(), json.jawaban.toLowerCase().trim()) >= threshold) m.reply(`*Dikit Lagi!*`)
