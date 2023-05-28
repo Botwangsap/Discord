@@ -30,7 +30,7 @@ let rules = `➯ *TIDAK SPAM BOT*
 ┆⟥⟤ ➠ (${global.bottime})
 └─┈⟅`
 let nth = `☰⟥⟝⟞⟝❨ *Rᴜʟᴇs Mʏ Bᴏᴛ* ❩⟞⟝⟞⟤☰`
-conn.send3ButtonImg(m.chat, `${pickRandom(flaaa2)}` + `${ucapan()} ` + `${name}`, nth, rules, 'Menu', '.menu', 'Owner', '.owner', 'Credit', '.credit', m, { contextInfo: { externalAdReply: { showAdAttribution: true,
+m.reply(m.chat, `${pickRandom(flaaa2)}` + `${ucapan()} ` + `${name}`, nth, rules, m, { contextInfo: { externalAdReply: { showAdAttribution: true,
     mediaUrl: 'https://wa.me/p/9545254345500673/6281998425782',
     mediaType: 2, 
     description: sgc,
