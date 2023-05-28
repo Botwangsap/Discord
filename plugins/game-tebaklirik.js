@@ -22,7 +22,7 @@ Ketik ${usedPrefix}teli untuk bantuan
 Bonus: ${poin} XP
     `.trim()
     conn.tebaklirik[id] = [
-        await conn.sendBut(m.chat, caption, wm, 'Bantuan', '.teli', m),
+        m.reply(m.chat, caption, wm, m),
         json, poin,
         setTimeout(() => {
             if (conn.tebaklirik[id]) conn.reply(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, conn.tebaklirik[id][0])
