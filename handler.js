@@ -685,18 +685,24 @@ export async function participantsUpdate({ id, participants, action }) {
             if (chat.welcome) {
                     let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
                     for (let user of participants) {
-                        let pp = './src/avatar_contact.png'
+                        let pp = 'https://i.ibb.co/sQTkHLD/ppkosong.png'
+                        let name = await this.getName(user)
+                        let gpname = await this.getName(id)
+                        let member = groupMetadata.participants.length
+                        pp: pp
                         try {
-                            pp = await this.profilePictureUrl(user)
+                            pp = await this.profilePictureUrl(user, 'image')
                         } catch (e) {
                         } finally {
-                            text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc.toString()) :
-                                (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
-                            this.sendFile(id, pp, 'pp.jpg', text, null, false, { mentions: [user] })
+                            text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc ? String.fromCharCode(8206).repeat(4001) + groupMetadata.desc : '') :
+                                (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', await this.getName(user))
+                            let wel = API(`https://api.lolhuman.xyz/api/base/welcome?apikey=BrunoSobrino&img1=https://i.postimg.cc/CM34YRFb/photo-2021-02-05-10-13-39.jpg&img2=https://i.postimg.cc/CM34YRFb/photo-2021-02-05-10-13-39.jpg&background=https://i.ibb.co/8B6Q84n/LTqHsfYS.jpg&username=${name}&member=${member}&groupname=${gpname}`)
+                            let lea = API(`https://api.lolhuman.xyz/api/base/leave?apikey=BrunoSobrino&img1=https://i.postimg.cc/CM34YRFb/photo-2021-02-05-10-13-39.jpg&img2=https://i.postimg.cc/CM34YRFb/photo-2021-02-05-10-13-39.jpg&background=https://i.ibb.co/8B6Q84n/LTqHsfYS.jpg&username=${name}&member=${member}&groupname=${gpname}`)
+                             this.sendFile(id, action === 'add' ? wel : lea, 'pp.jpg', text, null, false, { mentions: [user] })
                         }
                     }
                 }
-                break
+                break 
  
         case 'promote':
             text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
