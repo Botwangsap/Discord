@@ -12,8 +12,8 @@ let handler = async (m) => {
     if (!(reward in user)) continue
     user[reward] += rewards[reward]
     text += `*+${rewards[reward]}* ${global.rpg.emoticon(reward)}${reward}\n`
-  }
-  m.reply(m.chat,'*––––––『 WEEKLY 』––––––*', text.trim(), null, m)
+  }    
+  conn.sendFile(m.chat,'*––––––『 WEEKLY 』––––––*', null, text.trim(), m)
   user.lastweekly = new Date * 1
 }
 handler.help = ['weekly']
