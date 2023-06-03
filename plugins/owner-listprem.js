@@ -1,15 +1,17 @@
-let handler = async (m, { conn, args }) => {
+let handler = async (m, { conn, args, command }) => {
   let user = Object.entries(global.db.data.users).filter(user => user[1].premiumTime).map(([key, value]) => {
     return { ...value, jid: key }
   })
   let name = '🌟 Premium'
+let pp = `https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=inferno-logo&doScale=false&scaleWidth=400&scaleHeight=400&fontsize=50&fillTextType=0&backgroundColor=black&text=${command}`
   let fkon = { key: { fromMe: false, participant: `${m.sender.split`@`[0]}@s.whatsapp.net`, ...(m.chat ? { remoteJid: '16504228206@s.whatsapp.net' } : {}) }, message: { contactMessage: { displayName: `${name}`, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:${name}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}}
   let premTime = global.db.data.users[m.sender].premiumTime
   let prem = global.db.data.users[m.sender].premium
   let waktu = clockString(`${premTime - new Date() * 1} `)
   let sortedP = user.map(toNumber('premiumTime')).sort(sort('premiumTime'))
   let len = args[0] && args[0].length > 0 ? Math.min(100, Math.max(parseInt(args[0]), 10)) : Math.min(10, sortedP.length)
-  await conn.reply(m.chat, `${htki} *PREMIUM* ${htka}
+  
+  let fileBuffer = Buffer.from(`${htki} *PREMIUM* ${htka}
 ┌✦ *My Premium Time:*
 ┊• *Name:* ${conn.getName(m.sender)}
 ${prem ? `${clockString (premiumTime - new Date() * 1)}` : '┊• *PremiumTime:* Expired 🚫'}
@@ -17,11 +19,15 @@ ${prem ? `${clockString (premiumTime - new Date() * 1)}` : '┊• *PremiumTime:
 
 •·–––––––––––––––––––––·•
 ${sortedP.slice(0, len).map(({ jid, name, premiumTime, registered }, i) => `\n\n┌✦ ${registered ? name : conn.getName(jid)}\n┊• wa.me/${jid.split`@`[0]}\n${premiumTime > 0 ? `${clockString (premiumTime - new Date() * 1)}` : '┊ *EXPIRED 🚫*'}`).join`\n┗━═┅═━––––––๑`}
-┗━═┅═━––––––๑`.trim(), wm, null, fkon)
-setTimeout(() => {
+┗━═┅═━––––––๑`.trim())
+
+  await conn.sendFile(m.chat, pp, null, fileBuffer, m)
+  
+  setTimeout(() => {
     if (db.data.chats[m.chat].deletemedia) conn.deleteMessage(m.chat, key)
   }, db.data.chats[m.chat].deletemediaTime)
 }
+
 handler.help = ['premlist [angka]']
 handler.tags = ['info']
 handler.command = /^(listprem|premlist)$/i
