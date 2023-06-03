@@ -35,12 +35,12 @@ ptt: false, seconds: 0,contextInfo: {
     description: 'https://instagram.com/anggatzi123',
     title: "Now Playing...",
     body: wm,
-    thumbnail: await (await fetch('https://telegra.ph/file/c72133b197a68d3ea514d.jpg')).buffer(),
+    thumbnail: await (await fetch('https://telegra.ph/file/b56815150e134b2929f93.jpg')).buffer(),
     sourceUrl: 'https://instagram.com/anggatzi123'
  	  /*   sourceUrl: sig,
            title: '◄⟬ ●━━━ ⧏ ⧎ ⧐ ━━━● ⟭►',  
             body: 'Now Playing...', 
-           thumbnail: await (await fetch('https://telegra.ph/file/c72133b197a68d3ea514d.jpg')).buffer()*/
+           thumbnail: await (await fetch('https://telegra.ph/file/b56815150e134b2929f93.jpg')).buffer()*/
 }
      }
     })
