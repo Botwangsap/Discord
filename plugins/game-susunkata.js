@@ -2,7 +2,6 @@ import fetch from 'node-fetch'
 let timeout = 120000
 let poin = 4999
 let handler = async (m, { conn, command, usedPrefix }) => {
-let imgr = flaaa.getRandom()
 
     conn.susunkata = conn.susunkata ? conn.susunkata : {}
     let id = m.chat
@@ -21,7 +20,7 @@ Ketik ${usedPrefix}hsus untuk bantuan
 Bonus: ${poin} XP
     `.trim()
     conn.susunkata[id] = [
-        await conn.sendFile(m.chat, `${imgr + command}`, null, caption, m),
+        await conn.sendFile(m.chat, null, caption, m),
         json, poin,
         setTimeout(() => {
             if (conn.susunkata[id]) conn.reply(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, conn.susunkata[id][0])
