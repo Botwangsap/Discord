@@ -3,11 +3,9 @@ let handler = async (m, { conn }) => {
     let id = m.chat
     if (!(id in conn.siapakahaku)) throw false
     let json = conn.siapakahaku[id][1]
-    let ans = json.jawaban
-    let clue = ans.replace(/[bcdfghjklmnpqrstvwxyz]/ig, '_')
-    m.reply('```' + clue + '```')
+    conn.reply(m.chat, '```' + json.jawaban.replace(/[AIUEOaiueo]/ig, '_') + '```', m)
 }
-handler.command = /^who$/i
+handler.command = /^hsi$/i
 
 handler.limit = true
 
