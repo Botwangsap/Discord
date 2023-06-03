@@ -13,7 +13,7 @@ let handler = async (m,{ conn} ) => {
     user[reward] += rewards[reward]
     text += `*+${rewards[reward]}* ${global.rpg.emoticon(reward)}${reward}\n`
   }
-  m.reply(m.chat,'*––––––『 DAILY 』––––––*', text.trim(), null, m)
+    conn.sendFile(m.chat, '*––––––『 DAILY 』––––––*', null, text.trim(), m)
   user.lastclaim = new Date * 1
 }
 handler.help = ['daily', 'claim']
