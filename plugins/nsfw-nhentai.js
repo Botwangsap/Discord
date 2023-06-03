@@ -26,6 +26,7 @@ handler.command = /^nhentaidl$/i
 handler.tags = ['nsfw']
 handler.help = ['nhentaidl <code>']
 handler.limit = true
+handler.premium = true
 
 export default handler 
 
