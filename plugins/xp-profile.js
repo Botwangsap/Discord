@@ -23,7 +23,7 @@ ${readMore}
 ${clockString(user.premiumTime)}
 📑 • *Registered:* ${registered ? '✅': '❌'}
 `.trim()
-    conn.sendButton(m.chat, str, botdate, pp, [[`${registered ? 'Menu':'Verify'}`, `${user.registered ? '.menu':'.verify'}`]], fkon, { contextInfo: { mentionedJid: [who], forwardingScore: 999, isForwarded: true}})
+  conn.sendFile(m.chat, pp, null, str, fkontak) 
 }
 handler.help = ['profile [@user]']
 handler.tags = ['exp']
