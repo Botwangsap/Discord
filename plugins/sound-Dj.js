@@ -16,7 +16,7 @@ let stiker = await sticker(null, global.API(`https://telegra.ph/file/d34b2ab2cb2
           showAdAttribution: true,
     mediaUrl: sgc,
     mediaType: 2,
-    description: 'Ryzn', 
+    description: 'Lisabotz-MD🥰🍭😍', 
     title: `${command} Sedang Di Proses`,
     body: botdate,
     thumbnail: await(await fetch(pp)).buffer(),
@@ -29,14 +29,14 @@ let audio = `https://raw.githubusercontent.com/Aisyah-Aldi/Sound/main/${command}
 await conn.sendFile(m.chat, audio, 'error.mp3', null, fkontak, true, {
 type: 'audioMessage', 
 ptt: false, seconds: 0,contextInfo: {
-         externalAdReply: { showAdAttribution: true,
- mediaUrl: 'www.instagram.com/ryzen_vermillion',
+         externalAdReply: { showAdAttribution: true,
+ mediaUrl: 'https://instagram.com/anggatzi123',
     mediaType: 2, 
-    description: 'www.instagram.com/ryzen_vermillion',
+    description: 'https://instagram.com/anggatzi123',
     title: "Now Playing...",
     body: wm,
-    thumbnail: await (await fetch('https://telegra.ph/file/c72133b197a68d3ea514d.jpg')).buffer(),
-    sourceUrl: 'www.instagram.com/hyuura-official'
+    thumbnail: await (await fetch('https://telegra.ph/file/c72133b197a68d3ea514d.jpg')).buffer(),
+    sourceUrl: 'https://instagram.com/anggatzi123'
  	  /*   sourceUrl: sig,
            title: '◄⟬ ●━━━ ⧏ ⧎ ⧐ ━━━● ⟭►',  
             body: 'Now Playing...', 
