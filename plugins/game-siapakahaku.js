@@ -4,7 +4,6 @@ import { siapakahaku } from '@bochilteam/scraper'
 let timeout = 60000
 let poin = 4999
 let handler = async (m, { conn, command, usedPrefix }) => {
-let imgr = flaaa.getRandom()
 
     conn.siapakahaku = conn.siapakahaku ? conn.siapakahaku : {}
     let id = m.chat
@@ -20,7 +19,7 @@ Ketik ${usedPrefix}hsi untuk bantuan
 Bonus: ${poin} XP
 `.trim()
     conn.siapakahaku[id] = [
-        await conn.sendFile(m.chat, `${imgr + command}`, null, caption,, m),
+        await conn.sendFile(m.chat, null, caption,, m),
         json, poin,
         setTimeout(() => {
             if (conn.siapakahaku[id]) conn.reply(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, conn.siapakahaku[id][0])
