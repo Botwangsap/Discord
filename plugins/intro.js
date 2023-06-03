@@ -1,54 +1,30 @@
-/*let handler = async m => {
+import fetch from 'node-fetch';
 
-let krtu = `Kartu Intro`
-m.reply(`
-0ཻུ۪۪ꦽꦼ̷⸙‹•══════════════♡᭄
-│       *「 Kartu Intro 」*
-│ *Nama     :* 
-│ *Gender   :* 
-│ *Umur      :* 
-│ *Hobby    :* 
-│ *Kelas      :* 
-│ *Asal         :* 
-│ *Agama    :* 
-|  *Status     :* 
-╰═════ꪶ ཻུ۪۪ꦽꦼ̷⸙ ━ ━ ━ ━ ꪶ ཻུ۪۪ꦽꦼ̷⸙
-`.trim()) // Tambah sendiri kalo mau
-}
-handler.command = /^(intro)$/i
+const handler = async (m, { conn }) => {
+  try {
+    const name = conn.getName(m.sender);
+    const age = '18';
+    const address = 'Indonesia';
+    const hobby = 'Coding';
+    const partner = 'Single';
 
-export default handler */
+    const introText = `✨🌟 *${name}'s Introduction* 🌟✨\n\n`
+      + `👤 *Name:* ${name}\n`
+      + `🎂 *Age:* ${age}\n`
+      + `🏠 *Address:* ${address}\n`
+      + `🎨 *Hobby:* ${hobby}\n`
+      + `💑 *Partner:* ${partner}\n`;
 
-import fetch from 'node-fetch'
-let handler = async(m, { conn, text, usedPrefix, command }) => {
-let pp = await conn.profilePictureUrl(m.chat).catch(_ => null)
+    const wibuApiUrl = hwaifu.getRandom()
+    const thumbnail = await (await fetch(wibuApiUrl)).buffer();
 
-let krtu = `0ཻུ۪۪ꦽꦼ̷⸙‹•══════════════♡᭄
-│       *「 Kartu Intro 」*
-│ *Nama     :* 
-│ *Gender   :* 
-│ *Umur      :* 
-│ *Hobby    :* 
-│ *Kelas      :* 
-│ *Asal         :* 
-│ *Agama    :* 
-|  *Status     :* 
-╰═════ꪶ ཻུ۪۪ꦽꦼ̷⸙ ━ ━ ━ ━ ꪶ ཻུ۪۪ꦽꦼ̷⸙
-`
-let wibu = `https://api-reysekha.herokuapp.com/api/random/cosplay?apikey=apirey` 
-let thumb = await(await fetch(wibu)).buffer()
-m.reply(m.chat, krtu, 'Script : https://instagram.com/anggatzi123\nFollow!!', m, { contextInfo: { externalAdReply: { showAdAttribution: true,
-    mediaUrl: "https://instagram.com/anggatzi123",
-    mediaType: "VIDEO",
-    description: "https://instagram.com/anggatzi123", 
-    title: 'Lisabotz-MD🥰😍',
-    body: wm,
-    thumbnail: thumb,
-    sourceUrl: sgc
+    conn.sendFile(m.chat, thumbnail, '1684450933508.jpg', introText, m);
+  } catch (err) {
+    console.log(err);
+    conn.reply(m.chat, 'Error!', m);
   }
-  } }) // Tambah sendiri kalo mau
-}
-handler.command = /^(intro)$/i
+};
 
-export default handler
+handler.command = /^(intro)$/i;
 
+export default handler;
