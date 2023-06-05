@@ -216,6 +216,7 @@ global.openai = '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'  //api key
 global.org = 'AnggaKz'  //openAI Organization name
 global.deepai = 'quickstart-QUdJIGlzIGNvbWluZy4uLi4K' // https://deepai.org
 global.zenzkey = 'b8040941f7'
+global.ibeng = 'tamvan'
 global.lolkey = 'SGWN' //backup : AryaXyz
 global.caliph = 'Lwlct6wi'
 global.APIs = { // API Prefix
