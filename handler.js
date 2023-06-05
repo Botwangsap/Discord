@@ -314,6 +314,8 @@ export async function handler(chatUpdate) {
                     chat.antiBadword = false
                 if (!('simi' in chat))
                     chat.simi = false
+                if (!('autoread' in chat)) 
+                    chat.autoread = true
                 if (!('nsfw' in chat))
                     chat.nsfw = false
                 if (!('premnsfw' in chat))
@@ -324,6 +326,7 @@ export async function handler(chatUpdate) {
                 global.db.data.chats[m.chat] = {
                     isBanned: false,
                     welcome: false,
+                    autoread: true,
                     detect: true,
                     sWelcome: '',
                     sBye: '',
