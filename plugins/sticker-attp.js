@@ -1,15 +1,13 @@
-import { sticker } from '../lib/sticker.js'
-let handler = async (m, { conn, text, usedPrefix, command }) => {
-    let teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.text
-    if (!text) throw '🚩 kek gini anj .attp Ahhh'
-   await conn.sendMessage(m.chat, { react: { text: "⏳",key: m.key,}})  
-     m.reply(md)
-    let stiker = await sticker(null, global.API('https://saipulanuar.ga/api/maker/', 'attp3?text', { file: '', text: teks }), global.packname, global.author)
-    if (stiker) return conn.sendFile(m.chat, stiker, 'sticker.webp', '', m)
-    throw stiker.toString()
-}
-handler.help = ['attp <teks>']
-handler.tags = ['sticker']
-handler.command = /^attp$/i
-handler.limit = true
-export default handler
+let handler = async(m, { conn, text, args, usedPrefix, command }) => {
+    if (!text) throw `Teksnya?`
+    let teks = encodeURI(text)
+    if (command == 'attp') {
+    conn.sendFile(m.chat, `https://api.lolhuman.xyz/api/attp?apikey=${global.lolkey}&text=${teks}`, 'sticker.webp', '', m)
+    }
+    handler.help = ['attp']
+    handler.tags = ['sticker']
+    
+    handler.command = /^attp$/i
+    handler.limit = true
+    
+    export default handler
