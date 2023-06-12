@@ -8,5 +8,6 @@ let handler = async (m, {text, args}) => {
 handler.command = ['simi']
 handler.tags = ['fun']
 handler.help = ['simi']
+handler.limit = true
 
 export default handler
