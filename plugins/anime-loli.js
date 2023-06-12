@@ -1,14 +1,79 @@
-import fetch from 'node-fetch'
-
 let handler = async (m, { conn, text }) => {
-let res = await fetch('https://raw.githubusercontent.com/Xmell91/loli/master/loli.json')
-if (!res.ok) throw await `${res.status} ${res.statusText}`;
-let json = await res.json();
-let url = json[Math.floor(Math.random() * json.length)]
-await conn.sendButtonImg(m.chat, await (await fetch(url)).buffer(), 'Pedo Pedo', 'Next', '.loli', m)
-}
+    let yh = global.loli
+    let url = yh[Math.floor(Math.random() * yh.length)]
+    conn.sendFile(m.chat, url, null, 'Nih Kak', '', m)
+  }
+
 handler.command = /^(loli)$/i
 handler.tags = ['anime']
 handler.help = ['loli']
 handler.limit = true
 export default handler
+
+global.loli = [
+    "https://i.imgur.com/cvqoK7l.jpg",
+    "https://i.imgur.com/r1rm2ry.jpg",
+    "https://i.imgur.com/8XO7t9a.jpg",
+    "https://i.imgur.com/rTLpecf.jpg",
+    "https://i.imgur.com/l9of06d.jpg",
+    "https://i.imgur.com/GSegIuQ.jpg",
+    "https://i.imgur.com/nSwNlyf.jpg",
+    "https://i.imgur.com/iWhZIYl.jpg",
+    "https://i.imgur.com/53x02Cj.jpg",
+    "https://i.imgur.com/kqrgbGx.jpg",
+    "https://i.imgur.com/p9rFiqZ.jpg",
+    "https://i.imgur.com/Fr1Biar.jpg",
+    "https://i.imgur.com/Y0pOrf4.jpg",
+    "https://i.imgur.com/DLbggpI.jpg",
+    "https://i.imgur.com/wQWKt8t.jpg",
+    "https://i.imgur.com/bqm2ror.jpg",
+    "https://i.imgur.com/YjdCC5T.jpg",
+    "https://i.imgur.com/JIsiLyr.jpg",
+    "https://i.imgur.com/smwHPTJ.jpg",
+    "https://i.imgur.com/Rj7btya.jpg",
+    "https://i.imgur.com/rvbxepM.jpg",
+    "https://i.imgur.com/RNU9BjN.jpg",
+    "https://i.imgur.com/sXWfHxx.jpg",
+    "https://i.imgur.com/4hgUEny.jpg",
+    "https://i.imgur.com/rQNFNIR.jpg",
+    "https://i.imgur.com/NIkfoSt.jpg",
+    "https://i.imgur.com/gXJCV7E.jpg",
+    "https://i.imgur.com/i8pWglI.jpg",
+    "https://i.imgur.com/pTgKmHa.jpg",
+    "https://i.imgur.com/T5QtZ9I.jpg",
+    "https://i.imgur.com/gIHmi7S.jpg",
+    "https://i.imgur.com/U3MCtzx.jpg",
+    "https://i.imgur.com/5hJCG2f.jpg",
+    "https://i.imgur.com/OzBgd1W.jpg",
+    "https://i.imgur.com/3TvSX1i.jpg",
+    "https://i.imgur.com/b2MkoYM.jpg",
+    "https://i.imgur.com/Dtru3fp.jpg",
+    "https://i.imgur.com/vkqLf9v.jpg",
+    "https://i.imgur.com/b1vBRTV.jpg",
+    "https://i.imgur.com/eMv5vkT.jpg",
+    "https://i.imgur.com/1kbChJv.jpg",
+    "https://i.imgur.com/hQFq7aG.jpg",
+    "https://i.imgur.com/bWbqyNE.jpg",
+    "https://i.imgur.com/fXhu9Yc.jpg",
+    "https://i.imgur.com/QutckMk.jpg",
+    "https://i.imgur.com/VKrAV4e.jpg",
+    "https://i.imgur.com/vzbezXa.jpg",
+    "https://i.imgur.com/UTk4A6G.jpg",
+    "https://i.imgur.com/SSS7cE4.jpg",
+    "https://i.imgur.com/H2WQ3Rs.jpg",
+    "https://i.imgur.com/VK8ibDW.jpg",
+    "https://i.imgur.com/my9rWpH.jpg",
+    "https://i.imgur.com/83UBvmx.jpg",
+    "https://i.imgur.com/9J1txSW.jpg",
+    "https://i.imgur.com/ZjYQem6.jpg",
+    "https://i.imgur.com/tzqq3tg.jpg",
+    "https://i.imgur.com/E8gxWdF.jpg",
+    "https://i.imgur.com/kN1MpzR.jpg",
+    "https://i.imgur.com/s8ql7VD.jpg",
+    "https://i.imgur.com/BcjcGwf.jpg",
+    "https://i.imgur.com/aFeqLQJ.jpg",
+    "https://i.imgur.com/CaUoyOy.jpg",
+    "https://i.imgur.com/w5dY397.png",
+    "https://i.imgur.com/qouyaqF.png",
+    "https://i.imgur.com/pi4zAhE.png",
+  ]
