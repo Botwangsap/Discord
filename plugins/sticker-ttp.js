@@ -1,18 +1,14 @@
-import api from 'api-dylux';
-import { sticker } from '../lib/sticker.js';
-let handler = async (m, { conn, args, text, usedPrefix, command }) => {
-  if (!text) throw 'kaya gini sayang .ttp emuachh'
-  try {
-    const res = await api.ttp(text);
-    const stiker = await sticker(false, res.result, global.packname, global.author);
-    if (stiker) await conn.sendFile(m.chat, stiker, "sticker.webp", "", m);
-  } catch (error) {
-    console.error(error);
-  }
-};
+let handler = async(m, { conn, text, args, usedPrefix, command }) => {
+    if (!text) throw `Teksnya?`
+    let teks = encodeURI(text)
+    if (command == 'ttp') {
+    conn.sendFile(m.chat, `https://api.lolhuman.xyz/api/ttp?apikey=${global.lolkey}&text=${teks}`, 'sticker.webp', '', m)
+    }
+    
+handler.help = ['ttp']
+handler.tags = ['sticker']
 
-handler.help = ['ttp'].map(v => v + ' <teks>');
-handler.tags = ['sticker'];
-handler.command = /^ttp$/i;
+handler.command = /^ttp$/i
+
 handler.limit = true
-export default handler;
+export default handler
