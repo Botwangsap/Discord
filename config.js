@@ -212,9 +212,9 @@ global.rpg = {
 
 
 //⫹⫺ ╳╶╼╶╶╶╶┈ ⎝ WEBSITE APIKEY ⎞ ┈╴╴╴╴╾╴╳ ⫹⫺
-global.openai = 'sini'  //api key bisa didapatkan dari https://openai.com/api/
-global.org = 'sini'  //openAI Organization name
-global.deepai = 'sini' // https://deepai.org
+global.openai = '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'  //api key bisa didapatkan dari https://openai.com/api/
+global.org = 'org-dvg27e6P1Cw8NLUkZokLrPDE'  //openAI Organization name
+global.deepai = '251f5286-8bb9-443d-9cb3-53c82868e200' // https://deepai.org
 global.zenzkey = 'b8040941f7'
 global.ibeng = 'tamvan'
 global.lolkey = 'SGWN' //backup : AryaXyz
