@@ -51,7 +51,7 @@ export async function handler(chatUpdate) {
                 if (!isNumber(user.exp))
                     user.exp = 0
                 if (!isNumber(user.limit))
-                    user.limit = 10
+                    user.limit = 15
                 if (!isNumber(user.lastclaim))
                     user.lastclaim = 0
                 if (!isNumber(user.pasangan))
@@ -209,7 +209,7 @@ export async function handler(chatUpdate) {
             } else
                 global.db.data.users[m.sender] = {
                     exp: 0,
-                    limit: 10,
+                    limit: 15,
                     lastclaim: 0,
                     registered: false,
                     name: m.name,
@@ -338,8 +338,8 @@ export async function handler(chatUpdate) {
                     antiBadword: false,
                     simi: false,
                     expired: 0,
-                    nsfw: false,
-                    premnsfw: false,
+                    nsfw: true,
+                    premnsfw: true,
                 }
             let settings = global.db.data.settings[this.user.jid]
             if (typeof settings !== 'object') global.db.data.settings[this.user.jid] = {}
