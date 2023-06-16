@@ -13,9 +13,9 @@ let handler = async (m, { conn, generateWAMessageFromContent, }) => {
            },
            "message": {
                "groupInviteMessage": {
-                   "groupJid": "6282127487538-1625305606@g.us",
+                   "groupJid": "6285974717702-1633474983@g.us",
                    "inviteCode": "null",
-                   "groupName": "Halo", 
+                   "groupName": "Lisabotz-MD", 
                    "caption": wm, 
                    'jpegThumbnail': fs.readFileSync('./media/ok.jpg')
                }
