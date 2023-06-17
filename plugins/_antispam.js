@@ -9,14 +9,14 @@ export async function all(m) {
                 //global.db.data.users[m.sender].banned = true
                 m.reply('*Jangan Spam!!*')
             }
-            this.spam[m.sender].count = 0
+            this.spam[m.sender].count = 10
             this.spam[m.sender].lastspam = m.messageTimestamp.toNumber()
         }
     }
     else
         this.spam[m.sender] = {
             jid: m.sender,
-            count: 0,
-            lastspam: 0
+            count: 10,
+            lastspam: 10
         }
 }
