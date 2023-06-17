@@ -16,7 +16,7 @@ let handler = async(m, { conn }) => {
 ➯ *Tidak melayani Chat aneh-aneh*
 ⟬Buang waktu⟭
 `
-conn.sendMessage(m.chat,{ image :{ url : "https://telegra.ph/file/ad1ee4417fdb3cd9652f2.jpg" } , caption : txt }, { quoted: m })
+conn.sendMessage(m.chat,{ image :{ url : "https://telegra.ph/file/b964748b549c8dac0b3c2.jpg" } , caption : txt }, { quoted: m })
 }
 
 handler.help = ['rules']
