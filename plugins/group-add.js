@@ -50,7 +50,7 @@ handler.command = /^(add|\+)$/i
 handler.admin = false
 handler.group = true
 handler.botAdmin = true
-handler.owner = true
+handler.owner = false
 handler.premium = true
 
 export default handler
