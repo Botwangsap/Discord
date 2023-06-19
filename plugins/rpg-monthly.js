@@ -15,7 +15,7 @@ let handler = async (m) => {
         user[reward] += rewards[reward]
         text += `*+${rewards[reward]}* ${rpg.emoticon(reward)}${reward}\n`
     }
-  conn.sendFile(m.chat, '*––––––『 MONTHLY 』––––––*', null, text.trim(), m)    
+  conn.reply(m.chat, '*––––––『 MONTHLY 』––––––*', null, text.trim(), m)    
     user.lastmonthly = new Date * 1
 }
 handler.help = ['monthly']
