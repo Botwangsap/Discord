@@ -23,10 +23,11 @@ handler.help = ['kick'].map(v => v + ' @user')
 handler.tags = ['group']
 handler.command = /^(kick)$/i
 
-handler.owner = true
+handler.owner = false
 handler.group = true
 handler.botAdmin = true
-handler.admin = true // hanya admin grup yang dapat menggunakan perintah ini
+handler.admin = false // hanya admin grup yang dapat menggunakan perintah ini
+handler.premium = true
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 export default handler
