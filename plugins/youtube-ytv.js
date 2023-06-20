@@ -55,6 +55,8 @@ const handler = async (m, { conn, args, command }) => {
 handler.help = ["ytmp4 <link>"]
 handler.tags = ['downloader']
 handler.command = /(^ytmp4)$/i
+
+handler.register = true
 handler.limit = true
 
 export default handler
