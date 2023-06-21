@@ -1,7 +1,7 @@
 <p align="center">
     <img src="./media/1684450933508.jpg" width="100%" style="margin-left: auto;margin-right: auto;display: block;">
 </p>
-<h1 align="center">Nao-Botz V2</h1>
+<h1 align="center">Lisabotz-MD</h1>
 
 
 ## NOTE BEFORE USING!!
@@ -34,8 +34,8 @@
 ---------
 
 ##
-[![BOT WHATSAPP](https://img.shields.io/badge/WhatsApp%20BOT-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/6285864034767) 
-[![ONWER](https://img.shields.io/badge/Owner%20BOT-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/6281387307198) 
+[![BOT WHATSAPP](https://img.shields.io/badge/WhatsApp%20BOT-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/6283191486089) 
+[![ONWER](https://img.shields.io/badge/Owner%20BOT-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/6285923463470) 
 
 ##
 [![Uptime Status](https://api.netlify.com/api/v1/badges/074dc5c6-dc02-47eb-afdb-f504d226ba3b/deploy-status)](https://app.netlify.com/sites/nao-md/deploys)
@@ -144,7 +144,7 @@ node .
 
 ## Thanks To
 ```bash
-𝐀𝐮𝐭𝐡𝐨𝐫 : Shirokami Ryzen 
-𝐖𝐚 : +6281387307198
+𝐀𝐮𝐭𝐡𝐨𝐫 : AnggaKz
+𝐖𝐚 : +6285923463470
 𝐛𝐚𝐬𝐞 : Narutomo and Elaina
-𝐌𝐲 𝐏𝐫𝐨𝐣𝐞𝐜𝐭 : 20 Nov 2022
+𝐌𝐲 𝐏𝐫𝐨𝐣𝐞𝐜𝐭 : 01 Jan 2023
