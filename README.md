@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="./media/own.jpg" width="100%" style="margin-left: auto;margin-right: auto;display: block;">
+    <img src="./media/1684450933508.jpg" width="100%" style="margin-left: auto;margin-right: auto;display: block;">
 </p>
 <h1 align="center">Nao-Botz V2</h1>
 
@@ -15,9 +15,9 @@
 
 ### a little about this bot
 - ✔️ | **Simple** 
-- ✔️ | **Button Template** 
+- ✔️ | **No Button** 
 - ✔️ | **Multi Device** 
-- ✔️ | **Button Document** 
+- ✔️ | **template Document** 
 ---------
 ### Some of the features include
 - ✔️ | Menfess
