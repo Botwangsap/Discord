@@ -28,7 +28,7 @@ let handler = async (m, { conn, args: [effect], text: txt, usedPrefix, command }
         description: 'htts://instagram.com/anggatzi123',
         title: `${effect}nya Sudah Jadi :D`,
         body: wm,
-        thumbnail: fs.readFileSync('./thumbnail.jpg'),
+        thumbnail: fs.readFileSync('./1684450933508.jpg'),
         sourceUrl: sgc
       }
     }
