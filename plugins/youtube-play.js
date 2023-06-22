@@ -30,7 +30,7 @@ mediaType:  2,
 mediaUrl: `${url}`,
 title: `AUDIO SEDANG DIKIRIM...`,
 body: wm,
-sourceUrl: 'http://wa.me/6285923463470', thumbnail: await ( await conn.getFile(thumbnail)).data
+sourceUrl: 'https://wa.me/6285923463470', thumbnail: await ( await conn.getFile(thumbnail)).data
   }
  } 
 })
@@ -65,7 +65,7 @@ handler.tags = ['downloader', 'limitmenu']
 handler.command = /^play?$/i
 
 handler.exp = 0
-handler.limit = true
 handler.register = false
+handler.limit = true
 
 export default handler
