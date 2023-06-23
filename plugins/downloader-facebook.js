@@ -1,15 +1,25 @@
-import fetch from  'node-fetch'
+import fetch from 'node-fetch'
+let handler = async (m, { conn, args, usedPrefix, command }) => {
+  const linknya = args[0]
 
-let handler = async (m, { conn, command, text, usedPrefix }) => {
-	if (!text) throw `Masukan Linknya\nExample; ${usedPrefix}${command} https://www.facebook.com/100010929794713/posts/1885825845125057/`
-	let res = await fetch(`https://api.zeltoria.my.id/api/download/facebook?url=${text}&apikey=${global.zeltoria}`)
-  let x = await res.json()
-  let cap = `Judul: ${x.title}`
-  conn.sendFile(m.chat, x.urls[0].hd, 'efbih.mp4', cap, m)
+  if (!args[0]) throw `Input *URL*`
+  try {
+    let p = await fetch(`https://xzn.wtf/api/download?url=${linknya}&apikey=${global.xzn}`)
+    let v = await p.json()
+    let o = v.url[0].url
+    await m.reply('Sedang diproses...')
+    await conn.sendFile(m.chat, o, '', global.wm, m)
+  } catch (e) {
+    console.log(e)
+    m.reply(`Fitur error atau Otak pengguna error`)
+  }
 }
-handler.help = ['facebook']
+
+handler.help = ['fb'].map(v => v + ' <url>')
 handler.tags = ['downloader']
-handler.command = /^(facebook|fbdl|fb|facebookdl)$/i
 handler.limit = true
+handler.register = true
+
+handler.command = /^(fb(dl)?)$/i
 
 export default handler
