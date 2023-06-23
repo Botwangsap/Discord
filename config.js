@@ -219,6 +219,10 @@ global.zenzkey = 'b8040941f7'
 global.ibeng = 'tamvan'
 global.lolkey = 'SGWN' //backup : AryaXyz
 global.caliph = 'Lwlct6wi'
+global.lankey = 'YOUR_APIKEY_HERE' //buy API at https://api.lannn.me/
+global.botcahx = 'YOUR_APIKEY_HERE' //https://api.botcahx.live/
+global.uptime = 'u1931038-1f70a77eef5964be82e7d606' // Masukin APIKEY uptimerobot kamu disini ===== https://uptimerobot.com/dashboard?ref=website-header#mySettings
+global.xzn = 'YOUR_APIKEY_HERE' //daftar sendiri jika key habis https://xzn.wtf/
 global.APIs = { // API Prefix
   // name: 'https://website'
   nrtm: 'https://nurutomo.herokuapp.com',
