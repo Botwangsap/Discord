@@ -17,7 +17,7 @@ Ketik ${usedPrefix}tebe untuk bantuan
 Bonus: ${poin} XP
     `.trim()
   conn.tebakbendera[id] = [
-    await conn.sendFile(m.chat, json.img, caption, wm, m)
+    await conn.sendFile(m.chat, json.img, 'bendera.jpg', caption, m)
     ,
     json, poin,
     setTimeout(async () => {
