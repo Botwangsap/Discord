@@ -29,7 +29,7 @@ END:VCARD`
 	//if (other) this.sendContact(other, number, name, m) 
 }
 handler.help = ['sendkontak']
-handler.tags = 'anonymous'
+handler.tags = 'menfess'
 handler.command = /^(sendkontak)$/i
 handler.private = true
 
