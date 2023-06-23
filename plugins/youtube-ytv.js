@@ -5,7 +5,7 @@ const handler = async (m, { conn, args, command }) => {
   const v = args[0]
 
   const resolutions = ["144p", "240p", "360p", "480p", "720p", "1080p"]
-  let qu = args[1] && resolutions.includes(args[1]) ? args[1] : "144p"
+  let qu = args[1] && resolutions.includes(args[1]) ? args[1] : "360p"
   let q = qu.replace('p', '')
 
   let thumb = {}
