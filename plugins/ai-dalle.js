@@ -1,7 +1,6 @@
 import { Configuration, OpenAIApi } from 'openai'
-const configuration = new Configuration({ organization: `${global.org}`, apiKey: `${global.openai}` }); //KEY-OPENAI-APIKEY-KAMU = https://platform.openai.com/account/api-keys , KEY-ORG-KAMU = https://platform.openai.com/account/org-settings
+const configuration = new Configuration({ organization: `org-VKTbfzIGL0EfLb8RgRfbLvbu`, apiKey: `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` }); 
 const openai = new OpenAIApi(configuration);
-
 let handler = async (m, { conn, text, command }) => {
     try {
         if (!text) throw new Error(`Membuat gambar dari AI.\n\nContoh:\n.img Rumah kayu diatas gunung bersalju\n\n\n\nCreate image from AI\n\nExample:\n.img Wooden house on snow mountain`);
@@ -28,12 +27,11 @@ let handler = async (m, { conn, text, command }) => {
 }
 
 
-handler.help = ['dalle <prompt>']
+handler.help = ['dalle']
 handler.tags = ['ai']
 handler.command = /^(dalle)$/i
 
 handler.premium = false
 handler.limit = true
-handler.register = true
 
 export default handler
