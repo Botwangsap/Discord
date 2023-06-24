@@ -69,8 +69,8 @@ global.wm2 = 'AnggaKz '
 global.botdate = `⫹⫺ DATE: ${week} ${date}\n⫹⫺ 𝗧𝗶𝗺𝗲: ${wktuwib}`
 global.bottime = `T I M E : ${wktuwib}`
 global.titlebot = `Lisabotz-MD🥰😍`
-global.stickpack = 'Lisabotz-MD🥰😍'
-global.stickauth = `© bot WhatsApp By AnggaKz✅😍🥰`
+global.stickpack = 'Lisabotz-MD🥰😍|nomor ownerbot: 085923463470'
+global.stickauth = `© bot WhatsApp By AnggaKz✅😍🥰|nomor bot WhatsApp: 083191486089`
 global.week = `${week} ${date}`
 global.wibb = `${wktuwib}`
 //⫹⫺ ╳╶╼╶╶╶╶┈ ⎝ OWNER INFO ⎞ ┈╴╴╴╴╾╴╳ ⫹⫺
@@ -222,7 +222,7 @@ global.caliph = 'Lwlct6wi'
 global.lankey = 'YOUR_APIKEY_HERE' //buy API at https://api.lannn.me/
 global.botcahx = 'fgUI8PmJ' //https://api.botcahx.live/
 global.uptime = 'apikey uptimebot' // Masukin APIKEY uptimerobot kamu disini ===== https://uptimerobot.com/dashboard?ref=website-header#mySettings
-global.xzn = 'YOUR_APIKEY_HERE' //daftar sendiri jika key habis https://xzn.wtf/
+global.xzn = 'AnggaKz' //daftar sendiri jika key habis https://xzn.wtf/
 global.APIs = { // API Prefix
   // name: 'https://website'
   nrtm: 'https://nurutomo.herokuapp.com',
