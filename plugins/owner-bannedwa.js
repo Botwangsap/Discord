@@ -93,6 +93,6 @@ Kami akan menghubungi Anda kembali melalui email, dan itu mungkin memerlukan wak
 	}
 };
 handler.command = ["bannedwa"]; // you decide
-//handler.tags = [""]; // you decide
+handler.tags = ["owner"]; // you decide
 handler.owner = true;
 export default handler;
