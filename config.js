@@ -212,9 +212,9 @@ global.rpg = {
 
 
 //⫹⫺ ╳╶╼╶╶╶╶┈ ⎝ WEBSITE APIKEY ⎞ ┈╴╴╴╴╾╴╳ ⫹⫺
-global.openai = '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'  //api key bisa didapatkan dari https://openai.com/api/
-global.org = 'org-dvg27e6P1Cw8NLUkZokLrPDE'  //openAI Organization name
-global.deepai = '251f5286-8bb9-443d-9cb3-53c82868e200' // https://deepai.org
+global.openai = 'aiapikey'  //api key bisa didapatkan dari https://openai.com/api/
+global.org = 'aiapikey'  //openAI Organization name
+global.deepai = 'apikryai' // https://deepai.org
 global.zenzkey = 'b8040941f7'
 global.ibeng = 'tamvan'
 global.lolkey = 'SGWN' //backup : AryaXyz
@@ -223,6 +223,7 @@ global.lankey = 'YOUR_APIKEY_HERE' //buy API at https://api.lannn.me/
 global.botcahx = 'fgUI8PmJ' //https://api.botcahx.live/
 global.uptime = 'apikey uptimebot' // Masukin APIKEY uptimerobot kamu disini ===== https://uptimerobot.com/dashboard?ref=website-header#mySettings
 global.xzn = 'AnggaKz' //daftar sendiri jika key habis https://xzn.wtf/
+global.xyro = 'fD8kSHe6GU'
 global.APIs = { // API Prefix
   // name: 'https://website'
   nrtm: 'https://nurutomo.herokuapp.com',
