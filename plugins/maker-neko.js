@@ -1,14 +1,15 @@
 import fetch from 'node-fetch'
 let handler = async (m, { conn, args }) => {
-   let response = args.join(' ').split('|')
-  if (!args[0]) throw 'Masukkan Parameter'
-  m.reply('Proses...')
-  let res = `https://ziy.herokuapp.com/api/maker/girlneko?text1=${response[0]}&text2=${response[1]}&apikey=xZiyy`
-  conn.sendFile(m.chat, res, 'neko.jpg', `Sudah Jadi`, m, false)
+let response = args.join(' ').split('|')
+  if (!args[0]) throw 'Teksnya?'
+  let res = `https://oni-chan.my.id/api/canvas/nekogirl1?text1=${response[0]}&text2=${response[1]}&apikey=`
+  conn.sendFile(m.chat, res, 'yae.jpg', `Nih Kak`, m, false)
 }
-handler.help = ['logoneko'].map(v => v + ' <text|text>')
-handler.tags = ['nulis']
-handler.command = /^(logoneko)$/i
+handler.help = ['nekosad']
+handler.tags = ['maker']
+handler.command = /^(nekogirl)$/i
+handler.register = false
+
 handler.limit = true
 
 export default handler
