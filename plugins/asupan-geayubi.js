@@ -6,7 +6,7 @@ let handler = async(m, { conn, usedPrefix, command }) => {
   conn.sendFile(m.chat, json.url, 'anu.jpg', '_Nih Kak_', m)
 }
 handler.help = ['geayubi']
-handler.tags = ['random']
+handler.tags = ['main']
 handler.limit = true
 handler.command = /^(geayubi)$/i
 
