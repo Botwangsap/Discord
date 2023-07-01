@@ -1,4 +1,5 @@
 let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner }) => {
+
   let isEnable = /true|enable|(turn)?on|1/i.test(command)
   let chat = global.db.data.chats[m.chat]
   let user = global.db.data.users[m.sender]
@@ -48,15 +49,6 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       chat.delete = isEnable
       break
-    case 'antibadword':
-      if (m.isGroup) {
-        if (!(isAdmin || isOwner)) {
-          global.dfail('admin', m, conn)
-          throw false
-        }
-      }
-      chat.antiBadword = isEnable
-     break
     case 'clear':
       isAll = true
       if (!isOwner) {
@@ -134,104 +126,23 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       chat.antiLink = isEnable
       break
-    case 'antilinkbitly':
+      case 'antifoto':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
           global.dfail('admin', m, conn)
           throw false
         }
       }
-      chat.antiLinkBitly = isEnable
+      chat.antiFoto = isEnable
       break
-      case 'antilinktik':
+      case 'antivideo':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
           global.dfail('admin', m, conn)
           throw false
         }
       }
-      chat.antiLinkTik = isEnable
-      break
-      case 'antilinkyt':
-      if (m.isGroup) {
-        if (!(isAdmin || isOwner)) {
-          global.dfail('admin', m, conn)
-          throw false
-        }
-      }
-      chat.antiLinkYt = isEnable
-      break
-      case 'antilinktel':
-      if (m.isGroup) {
-        if (!(isAdmin || isOwner)) {
-          global.dfail('admin', m, conn)
-          throw false
-        }
-      }
-      chat.antiLinkTel = isEnable
-      break
-      case 'antilinkfb':
-      if (m.isGroup) {
-        if (!(isAdmin || isOwner)) {
-          global.dfail('admin', m, conn)
-          throw false
-        }
-      }
-      chat.antiLinkFb = isEnable
-      break
-      case 'antilinkig':
-      if (m.isGroup) {
-        if (!(isAdmin || isOwner)) {
-          global.dfail('admin', m, conn)
-          throw false
-        }
-      }
-      chat.antiLinkIg = isEnable
-      break
-      case 'antilinkwa':
-      if (m.isGroup) {
-        if (!(isAdmin || isOwner)) {
-          global.dfail('admin', m, conn)
-          throw false
-        }
-      }
-      chat.antiLinkWa = isEnable
-      break
-      case 'antihatetepe':
-      if (m.isGroup) {
-        if (!(isAdmin || isOwner)) {
-          global.dfail('admin', m, conn)
-          throw false
-        }
-      }
-      chat.antiLinkHttp = isEnable
-      break
-      case 'nsfw':
-      if (m.isGroup) {
-        if (!(isAdmin || isOwner)) {
-          global.dfail('admin', m, conn)
-          throw false
-        }
-      }
-      chat.nsfw = isEnable
-      break
-      case 'antivirtex':
-      if (m.isGroup) {
-        if (!(isAdmin || isOwner)) {
-          global.dfail('admin', m, conn)
-          throw false
-        }
-      }
-      chat.antiVirtex = isEnable
-      break
-      case 'antisatir':
-      if (m.isGroup) {
-        if (!(isAdmin || isOwner)) {
-          global.dfail('admin', m, conn)
-          throw false
-        }
-      }
-      chat.antiSatir = isEnable
+      chat.antiVideo = isEnable
       break
       case 'simi':
         if (!isROwner) {
@@ -239,13 +150,6 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
           throw false
         }
       chat.simi = isEnable
-      break
-      case 'autovn':
-        if (!isROwner) {
-          global.dfail('rowner', m, conn)
-          throw false
-        }
-      chat.autoVn = isEnable
       break
       case 'autopresence':
         if (!isROwner) {
@@ -408,49 +312,33 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       global.opts['swonly'] = isEnable
       break
     default:
-      if (!/[01]/.test(command)) return m.reply(`
-List option:
-❗welcome
-❗delete
-❗public
-❗antivirtex
-❗antilink
-❗antilinkbitly
-❗antiLinkTik
-❗antiLinkYt
-❗antiLinkTel
-❗antiLinkFb
-❗antiLinkIg
-❗antiLinkWa
-❗antiLinkHttp
-❗nsfw
-❗antiviewonce
-❗antidelete
-❗antitoxic
-❗antisticker
-❗autosticker
-❗antibadword
-❗autolevelup
-❗detect
-❗document
-❗whitelistmycontacts
-❗restrict
-❗nyimak
-❗autoread
-❗pconly
-❗gconly
-❗swonly
-Contoh:
-${usedPrefix}enable welcome
-${usedPrefix}disable welcome
+     if (!/[01]/.test(command)) return m.reply(`List Option :
+-Welcome | -Delete | -Autodelvn | -Publik | -Simi
+-Nsfw | -PremNsfwChat | -Antilink | -AntiDelete
+-AntiSatir | -AntiSpam | -AntiSticker | -AntiVirtex
+-AutoPresence | -AutoReply | -AutoSticker
+-AutoUpmine | -AutoJoin | -AutoLevelup | -BcJoin 
+-Detect | -Document | -WhiteListMyContact | -Restrict 
+-Nyimak | -Antibadword | -PcOnly | -GcOnly 
+-SwOnly | -Freply | -Clear | -Desc | -Getmsg
+
+Contoh :
+.enable welcome
+Untuk Mengaktifkan
+.disable welcome
+Untuk Menonaktifkan
 `.trim())
       throw false
   }
-  m.reply(`
-*${type}* berhasil di *${isEnable ? 'nyala' : 'mati'}kan* ${isAll ? 'untuk bot ini' : isUser ? '' : 'untuk chat ini'}
-`.trim())
+ conn.reply(m.chat, `╭───═[Status]
+│⩽⩾ Tipe: ${type}
+│⩽⩾ Status: Sukses!
+│⩽⩾ Opsi: ${isEnable ? 'Aktif' : 'Nonaktif'}
+│⩽⩾ Untuk: ${isAll ? 'Bot Ini' : isUser ? '' : 'Chat Ini'}
+┗─────────────···
+`, m)
 }
-handler.help = ['en', 'dis'].map(v => v + 'able <option>')
+handler.help = ['enable', 'disable']
 handler.tags = ['group', 'owner']
 handler.command = /^((en|dis)able|(tru|fals)e|(turn)?o(n|ff)|[01])$/i
 
