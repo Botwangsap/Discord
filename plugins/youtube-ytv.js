@@ -1,7 +1,6 @@
-import { youtubedlv2, youtubedl } from '@bochilteam/scraper'
+import { youtubedlv2, youtubedlv3 } from '@bochilteam/scraper'
 
 const handler = async (m, { conn, args, command }) => {
-  if (!args[0]) throw 'Where`s Url?' // Zod
   const v = args[0]
 
   const resolutions = ["144p", "240p", "360p", "480p", "720p", "1080p"]
@@ -16,9 +15,9 @@ const handler = async (m, { conn, args, command }) => {
 
   let yt
   try {
-    yt = await youtubedl(v)
-  } catch {
     yt = await youtubedlv2(v)
+  } catch {
+    yt = await youtubedlv3(v)
   }
 
   const title = await yt.title
@@ -39,23 +38,21 @@ const handler = async (m, { conn, args, command }) => {
   }
 
   if (dlUrl) {
-    await m.reply(`Permintaan download video YouTube. Sedang diproses, mohon bersabar...`)
 
     await conn.sendMessage(m.chat, { video: { url: dlUrl, caption: title, ...thumb } }, { quoted: m })
 
-    await m.reply(`● Title: ${title}
-● Resolution: ${selectedResolution}
-● Size: ${size}
-● Video telah berhasil diunduh!`)
+    await m.reply(`• Title: ${title}
+• Resolution: ${selectedResolution}
+• Size: ${size}
+• Video Telah Berhasil Diunduh!`)
   } else {
-    await m.reply(`Maaf, video tidak tersedia untuk diunduh.`)
+    await m.reply(`Maaf, Video Tidak Ada.`)
   }
 }
 
-handler.help = ["ytmp4 <link>"]
+handler.command = /^(ytmp4|youtubemp4|ytv)$/i
+handler.help = ["ytmp4"]
 handler.tags = ['downloader']
-handler.command = /(^ytmp4)$/i
-
 handler.register = true
 handler.limit = true
 
