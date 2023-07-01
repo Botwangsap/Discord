@@ -116,35 +116,8 @@ let handler = async (m, { conn }) => {
   const pets = Object.keys(inventory.pets).map(v => user[v] && `${global.rpg.emoticon(v)} ${v}: ${user[v] >= inventory.pets[v] ? 'Max Levels' : `Level(s) ${user[v]}`}`).filter(v => v).join('\n').trim()
   const cooldowns = Object.entries(inventory.cooldowns).map(([cd, { name, time }]) => cd in user && `*• ${name}*: ${new Date() - user[cd] >= time ? '✅' : '❌'}`).filter(v => v).join('\n').trim()
   const caption = `
-🧑🏻‍🏫  ɴᴀᴍᴇ: ${conn.getName(m.sender)}
-${Object.keys(inventory.others).map(v => user[v] && `➔ ${global.rpg.emoticon(v)} ${v}: ${user[v]}`).filter(v => v).join('\n')}${tools ? `
-➔ 🎖️ role: ${user.role}
-
-*───── ᴛᴏᴏʟs ─────*
-${tools}` : ''}${dura ? `
-
-${dura}` : ''}${items ? `
-
-
-*───── ɪᴛᴇᴍs ─────*
-${items}
-➔ ᴛᴏᴛᴀʟ ɪᴛᴇᴍs: ${Object.keys(inventory.items).map(v => user[v]).reduce((a, b) => a + b, 0)} Items` : ''}${crates ? `
-
-
-*───── ᴄʀᴀᴛᴇs ─────*
-${crates}
-➔ ᴛᴏᴛᴀʟ ᴄʀᴀᴛᴇs: ${Object.keys(inventory.crates).map(v => user[v]).reduce((a, b) => a + b, 0)} Crates` : ''}${pets || user.petFood ? `
-
-
-*───── ᴘᴇᴛs ─────*
-${pets ? pets + '\n' : ''}${user.petFood ? '🍖 ᴘᴇᴛғᴏᴏᴅ: ' + user.petFood : ''}` : ''}${cooldowns ? `
-
-*───── ᴄᴏᴏʟᴅᴏᴡɴ ─────*
-${cooldowns}` : ''}
-*• dungeon:* ${user.lastdungeon == 0 ? '✅': '❌'}
-*• mining:* ${user.lastmining == 0 ? '✅': '❌'}
 `.trim()
-  conn.sendButton(m.chat, `*${htki} ɪɴᴠᴇɴᴛᴏʀʏ ${htka}*`, caption, null, [[`${user.health < 60 ? 'ʜᴇᴀʟ': 'ᴀᴅᴠᴇɴᴛᴜʀᴇ'}`,`${user.health < 60 ? '.heal': '.adventure'}`],['ᴘʀᴏғɪʟᴇ','.pp']],m)
+  conn.sendMessage(m.chat, { image: { url: pp }, caption: str }, { quoted: m })
 }
 handler.help = ['inventory', 'inv']
 handler.tags = ['rpg']
