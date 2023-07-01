@@ -308,6 +308,14 @@ export async function handler(chatUpdate) {
                     chat.delete = true
                 if (!('antiLink' in chat))
                     chat.antiLink = true
+                if (!('antiFoto' in chat))
+                    chat.antiFoto = false
+                if (!('antiVideo' in chat))
+                    chat.antiVideo = false
+                if (!('antiSticker' in chat))
+                    chat.antiSticker = false
+                if (!('antiAudio' in chat))
+                    chat.antiAudio = false
                 if (!('viewonce' in chat))
                     chat.viewonce = false
                 if (!('antiBadword' in chat)) 
@@ -334,6 +342,10 @@ export async function handler(chatUpdate) {
                     sDemote: '',
                     delete: true,
                     antiLink: false,
+                    antiFoto: false,
+                    antiVideo: false,
+                    antiSticker: false,
+                    antiAudio: false,
                     viewonce: false,
                     antiBadword: false,
                     simi: false,
