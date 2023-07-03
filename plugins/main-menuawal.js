@@ -194,7 +194,17 @@ let tags = {
     
  let fkon = { key: { fromMe: false, participant: `${m.sender.split`@`[0]}@s.whatsapp.net`, ...(m.chat ? { remoteJid: '16504228206@s.whatsapp.net' } : {}) }, message: { contactMessage: { displayName: `${name}`, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:${name}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}}
  let fotonya = 'https://telegra.ph/file/4f4b398879e29c1b1704d.jpg'
- conn.sendMessage(m.chat, { image: { url: fotonya  }, caption: text.trim()}, { quoted: fkon })
+ conn.sendMessage(m.chat, {
+      text: text,
+      contextInfo: {
+      externalAdReply: {
+      title: `Lisabotz-Md🥰😍 - Official`,
+      body: global.author,
+      thumbnailUrl: fotonya,
+      sourceUrl: `https://chat.whatsapp.com/Ly28IB8Fel4JbPS0qCUy2p`,
+      mediaType: 1,
+      renderLargerThumbnail: true
+      }}})
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
