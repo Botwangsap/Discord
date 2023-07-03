@@ -1,6 +1,11 @@
-import { youtubedl, youtubedlv2 } from '@bochilteam/scraper'
+import { 
+    youtubedl,
+    youtubedlv2 
+} from '@bochilteam/scraper'
+
 var handler = async (m, { conn, args }) => {
-  if (!args[0]) throw 'Urlnya Mana Bang? >:('
+  if (!args[0]) throw 'Urlnya Mana Banh? >:('
+  m.reply(wait)
   let q = '128kbps'
   let v = args[0]
 
@@ -10,15 +15,11 @@ var handler = async (m, { conn, args }) => {
   const ttl = await yt.title
   const size = await yt.audio[q].fileSizeH
 
-  await m.reply('Permintaan download audio/mp3 youtube sedang diproses, mohon bersabar...')
-
   // Tampilkan informasi file beserta thumbnail
   const info = `
-● Judul: ${ttl}
-● Ukuran: ${size}
-● Link YouTube: ${v}`
-
-  // Kirim pesan dan file audio ke user
+• Judul: ${ttl}
+• Ukuran: ${size}
+• Link YouTube: ${v}`
   await conn.sendMessage(m.chat, { 
     document: { url: dl_url }, 
     mimetype: 'audio/mpeg', 
@@ -29,10 +30,8 @@ var handler = async (m, { conn, args }) => {
 
 // Jika ingin menambahkan tag, ubah code berikut:
 handler.tags = ['downloader']
-handler.help = ['ytmp3 <link>']
-handler.command = /^ytmp3$/i
-
+handler.help = ['ytmp3']
+handler.command = /^yta|ytmp3|youtubemp3$/i
 handler.register = true
 handler.limit = true
-
 export default handler
