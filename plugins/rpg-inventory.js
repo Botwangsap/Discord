@@ -117,7 +117,7 @@ let handler = async (m, { conn }) => {
   const cooldowns = Object.entries(inventory.cooldowns).map(([cd, { name, time }]) => cd in user && `*• ${name}*: ${new Date() - user[cd] >= time ? '✅' : '❌'}`).filter(v => v).join('\n').trim()
   const caption = `
 `.trim()
-  conn.sendMessage(m.chat, { image: { url: pp }, caption: str }, { quoted: m })
+  conn.sendMessage(m.chat, caption: str }, { quoted: m })
 }
 handler.help = ['inventory', 'inv']
 handler.tags = ['rpg']
