@@ -5,7 +5,7 @@ let sewa = `
 │ • *1 Bulan:* 25K
 │ • *Permanen:* 30K
 ┠──「 *Pembayaran* 」
-│ • *Ovo:* [081998425782]
+│ • *DANA:* [081998425782]
 ❏──────────────๑
 `
 conn.reply(m.chat, sewa, m)
