@@ -7,11 +7,7 @@ const handler = async (m, { conn, args, command }) => {
   let qu = args[1] && resolutions.includes(args[1]) ? args[1] : "360p"
   let q = qu.replace('p', '')
 
-  let thumb = {}
-  try {
-    const thumb2 = yt.thumbnails[0].url
-    thumb = { jpegThumbnail: thumb2 }
-  } catch (e) {}
+  await m.reply('Permintaan download video/mp4 youtube sedang diproses, mohon bersabar...')
 
   let yt
   try {
@@ -41,18 +37,19 @@ const handler = async (m, { conn, args, command }) => {
 
     await conn.sendMessage(m.chat, { video: { url: dlUrl, caption: title, ...thumb } }, { quoted: m })
 
-    await m.reply(`• Title: ${title}
-• Resolution: ${selectedResolution}
-• Size: ${size}
-• Video Telah Berhasil Diunduh!`)
+    await m.reply(`● Title: ${title}
+● Resolution: ${selectedResolution}
+● Size: ${size}
+● Video Telah Berhasil Diunduh!`)
   } else {
     await m.reply(`Maaf, Video Tidak Ada.`)
   }
 }
 
-handler.command = /^(ytmp4|youtubemp4|ytv)$/i
-handler.help = ["ytmp4"]
+handler.help = ["ytmp4 <link>"]
 handler.tags = ['downloader']
+handler.command = /(^ytmp4)$/i
+
 handler.register = true
 handler.limit = true
 
