@@ -18,4 +18,4 @@ export async function before(m, {
         if (mean) this.sendMessage(m.chat, { text: caption, mentions: this.parseMention(caption) }, { quoted: m })
     }
 }
-export const disabled = true
+export const disabled = false
