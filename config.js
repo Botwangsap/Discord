@@ -69,8 +69,8 @@ global.wm2 = 'AnggaKz '
 global.botdate = `⫹⫺ DATE: ${week} ${date}\n⫹⫺ 𝗧𝗶𝗺𝗲: ${wktuwib}`
 global.bottime = `T I M E : ${wktuwib}`
 global.titlebot = `Lisabotz-MD🥰😍`
-global.stickpack = 'Lisabotz-MD🥰😍|nomor ownerbot: 085923463470'
-global.stickauth = `© bot WhatsApp By AnggaKz✅😍🥰|nomor bot WhatsApp: 083191486089`
+global.stickpack = 'Sticker Dibuat dengan © Lisabotz-MD🥰😍\n\n\nLisabotz\n+6283191486089'
+global.stickauth = `© bot WhatsApp By AnggaKz✅😍🥰|nomor ownerbot: 085923463470`
 global.week = `${week} ${date}`
 global.wibb = `${wktuwib}`
 //⫹⫺ ╳╶╼╶╶╶╶┈ ⎝ OWNER INFO ⎞ ┈╴╴╴╴╾╴╳ ⫹⫺
