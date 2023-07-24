@@ -1,56 +1,61 @@
-import { youtubedlv2, youtubedlv3 } from '@bochilteam/scraper'
-
-const handler = async (m, { conn, args, command }) => {
-  const v = args[0]
-
-  const resolutions = ["144p", "240p", "360p", "480p", "720p", "1080p"]
-  let qu = args[1] && resolutions.includes(args[1]) ? args[1] : "360p"
-  let q = qu.replace('p', '')
-
-  await m.reply('Permintaan download video/mp4 youtube sedang diproses, mohon bersabar...')
-
-  let yt
+var { youtubeSearch } = require('@bochilteam/scraper');
+var handler = async (m, { conn, text, usedPrefix }) => {
+  if (!text) throw 'Enter Title / link'
   try {
-    yt = await youtubedlv2(v)
-  } catch {
-    yt = await youtubedlv3(v)
-  }
+    var vid = (await youtubeSearch(text)).video[0]
+    if (!vid) throw 'Video/Audio Tidak Ditemukan'
+    var { title, description, thumbnail, videoId, durationH, durationS, viewH, publishedTime } = vid
+    var url = 'https://www.youtube.com/watch?v=' + videoId
 
-  const title = await yt.title
+    let vide = `https://yt.btch.bz/download?URL=${url}&videoName=video`
+    var tmb = thumbnail
+    var captionvid = `  ∘ Title: ${title}
+  ∘ Published: ${publishedTime}
+  ∘ Duration: ${durationH}
+  ∘ Second: ${durationS}
+  ∘ Views: ${viewH}  
+  ∘ Url:  ${url}
+  ∘ Description: ${description}`
+    var pesan = await conn.sendMessage(m.chat, {
+      text: captionvid,
+      contextInfo: {
+        externalAdReply: {
+          title: "",
+          body: "Lisabotz-MD🥰😍",
+          thumbnailUrl: tmb ,
+          sourceUrl: vide,
+          mediaType: 1,
+          showAdAttribution: true,
+          renderLargerThumbnail: true
+        }
+      }
+    })
+    if (durationS > 18000) return conn.sendMessage(m.chat, { text: `*Link Original:* ${await cut(url)}\n\n_Durasi terlalu panjang..._\n*Duration Limit!*` }, { quoted: pesan })
 
-  let size = ''
-  let dlUrl = ''
-  let selectedResolution = ''
-  let selectedQuality = ''
-  for (let i = resolutions.length - 1; i >= 0; i--) {
-    const res = resolutions[i]
-    if (yt.video[res]) {
-      selectedResolution = res
-      selectedQuality = res.replace('p', '')
-      size = await yt.video[res].fileSizeH
-      dlUrl = await yt.video[res].download()
-      break
-    }
-  }
-
-  if (dlUrl) {
-
-    await conn.sendMessage(m.chat, { video: { url: dlUrl, caption: title, ...thumb } }, { quoted: m })
-
-    await m.reply(`● Title: ${title}
-● Resolution: ${selectedResolution}
-● Size: ${size}
-● Video Telah Berhasil Diunduh!`)
-  } else {
-    await m.reply(`Maaf, Video Tidak Ada.`)
+    conn.sendMessage(m.chat, {
+      video: {
+        url: vide,
+        mimetype: 'video/webm',
+        attributes: [
+          {
+            name: 'controls',
+            value: 'true'
+          },
+          {
+            name: 'autoplay',
+            value: 'true'
+          }
+        ]
+      }
+    }, { quoted: pesan })
+  } catch (e) {
+    throw 'Video/Audio Tidak Ditemukan'
   }
 }
 
-handler.help = ["ytmp4 <link>"]
+handler.command = handler.help = ['ytmp4', 'ytv']
 handler.tags = ['downloader']
-handler.command = /(^ytmp4)$/i
-
-handler.register = true
+handler.exp = 0
 handler.limit = true
-
-export default handler
+handler.premium = false
+module.exports = handler
